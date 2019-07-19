@@ -1,0 +1,3 @@
+<h2>Show Meal</h2>
+
+<%= @meal.name %>

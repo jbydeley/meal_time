@@ -1,0 +1,28 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <fieldset class="uk-fieldset">
+
+    <div class="uk-margin">
+      <%= text_input f, :name, placeholder: "Meal", class: "uk-input" %>  
+      <%= error_tag f, :name %>
+    </div>
+  
+    <div class="uk-margin">
+      <%= text_input f, :description, placeholder: "Description", class: "uk-input" %>  
+      <%= error_tag f, :description %>
+    </div>
+
+    <div class="uk-margin">
+      <%= text_input f, :owner, placeholder: "Cook", class: "uk-input" %>  
+      <%= error_tag f, :owner %>
+    </div>
+
+    <div class="uk-margin">
+      <%= date_input f, :date, placeholder: "Date", class: "uk-input" %>  
+      <%= error_tag f, :date %>
+    </div>
+
+    <div class="uk-margin">
+      <%= submit "Submit", class: "uk-button uk-button-primary" %>
+    </div>
+  </fieldset>
+<% end %>

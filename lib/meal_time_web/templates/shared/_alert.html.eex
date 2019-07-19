@@ -1,0 +1,4 @@
+<div class="<%= @class %>" uk-alert role="alert">
+  <a class="uk-alert-close" uk-close></a>
+  <%= @message %>
+</div>

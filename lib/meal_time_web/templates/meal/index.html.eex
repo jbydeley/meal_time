@@ -1,0 +1,29 @@
+<h2>All Meals</h2>
+
+<table class="uk-table uk-table-striped">
+  <thead>
+    <tr>
+      <th>Meal</th>
+      <th>Description</th>
+      <th>Cook</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for meal <- @meals do %>
+    <tr>
+      <td><%= meal.name %></td>
+      <td><%= meal.description %></td>
+      <td><%= meal.owner %></td>
+      <td><%= meal.date %></td>
+      <td>
+        <%= link "Edit", to: Routes.meal_path(@conn, :edit, meal) %> | 
+        <%= link "Delete", to: Routes.meal_path(@conn, :delete, meal), method: "delete", data: [confirm: "Are you sure?"] %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "Add Meal", to: Routes.meal_path(@conn, :new) %>
